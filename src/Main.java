@@ -7,19 +7,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-        File input = new File("C:\\Users\\lebor\\IdeaProjects\\Cypher\\src\\TextToEncrypt");
-        File output = new File("C:\\Users\\lebor\\IdeaProjects\\Cypher\\src\\EncryptedText");
+        File input = new File("D:\\Kenny\\RepositoryForTest-Kenny\\src\\TextToEncrypt");
+        File output = new File("D:\\Kenny\\RepositoryForTest-Kenny\\src\\EncryptedText");
 
         System.out.println("Hello user what is your name ?");
 
         String name = sc.nextLine();
-        System.out.println("What do you wish to do " + name + "?" + " You can either encrypt a text and find it in the file \"Encrypted Text\" by selecting 1°) or you can find out about the encryption Key by selecting 2°)");
+        System.out.println("What do you wish to do " + name + "?" + "\n1. You can either encrypt a text and find it in the file \"Encrypted Text\" by selecting 1°) or" +
+                "\n2. You can find out about the encryption Key by selecting 2°)");
 
 
         int optionChosen = sc.nextInt();
         switch (optionChosen) {
             case 1:
-                System.out.println("Hello" + name + " this is a program to encrypt text. What is the text that you wish to encrypt ?");
+                System.out.println("Hello " + name + " this is a program to encrypt text.\nWhat is the text that you wish to encrypt?");
                 sc.nextLine();
                 String textToEncrypt = sc.nextLine();
                 //We put the text into the file thanks to a function I created in the class readAndWriteFiles
@@ -27,7 +28,7 @@ public class Main {
                 // we encrypt the text and put the text to the file "Encrypted text" Thanks to a function
                 readAndWriteFiles.encryptTextFromFileAndOutputIntoFile(input, output);
                 String encryptedText =  readAndWriteFiles.fileToText(output);
-                System.out.println("Your text : " + textToEncrypt + " has been succesfully encrypted into \"EncryptedText\". Go the the file to verify. \n Encrypted text = " + encryptedText);
+                System.out.println("Your text:- \"" + textToEncrypt + "\"\nhas been succesfully encrypted into \"EncryptedText\". Go the the file to verify. \nEncrypted text:- " + encryptedText);
                 break;
             case 2:
                 System.out.println("First we need a text to encrypt to find out about the encryption Key. Please give me a text");
